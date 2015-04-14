@@ -1,9 +1,7 @@
-require 'rubygems'
-require 'bundler/setup' # Releasy requires require that your application uses bundler.
-require 'releasy'
 require 'mechanize'
 require "highline/import"
 agent = Mechanize.new
+agent.agent.http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 page = agent.get("https://mmls.mmu.edu.my")
 form = page.form
 
