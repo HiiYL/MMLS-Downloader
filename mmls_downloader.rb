@@ -5,6 +5,11 @@ agent.agent.http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 page = agent.get("https://mmls.mmu.edu.my")
 form = page.form
 
+print "               #######################################\n"
+print "               |         MMLS      DOWNLOADER        |\n"
+print "               |               BY                    |\n"
+print "               |           HII YONG LIAN             |\n"
+print "               #######################################\n"
 student_id = ask "Input Student ID: "
 mmls_password = ask("Input MMLS password (Input will be hidden): ") { |q| q.echo = false }
 
