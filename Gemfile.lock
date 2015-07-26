@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    bcrypt (3.1.10)
+    bcrypt (3.1.10-x64-mingw32)
+    daybreak (0.3.0)
     domain_name (0.5.23)
       unf (>= 0.0.5, < 1.0.0)
     highline (1.7.1)
@@ -34,5 +37,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  bcrypt
+  daybreak
   highline
   mechanize
