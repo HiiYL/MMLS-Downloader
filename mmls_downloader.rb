@@ -1,6 +1,7 @@
 require 'mechanize'
 require "highline/import"
 require 'daybreak'
+require 'colorize'
 
 db = Daybreak::DB.new "mmls.db"
 agent = Mechanize.new
@@ -48,16 +49,15 @@ agent.pluggable_parser.default = Mechanize::Download
 subject_links = page.links_with(:text => /[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9] . [A-Z][A-Z][A-Z]/)
 subject_links.each do |link|
   page = agent.get(link.uri)
-  print "\n Current Subject: "  + link.text
+  puts "\n Current Subject: "  + link.text
   page.forms_with(:action => 'https://mmls.mmu.edu.my/form-download-content').each do |dl_form|
-    directory = link.text + "/"
+    directory = link.text.split(" (").first + "/"
     file_name = dl_form.file_name
-    print "\n Downloading " + file_name
     if Dir[directory + file_name].empty?
       agent.submit(dl_form).save(directory + file_name)
-      print "\n File saved as " + directory + file_name
-    else
-      print "\n Duplicate file found in destination, skipping ..."
+      puts "create ".green  + directory + file_name
+    # else
+    #   puts "identical ".blue + file_name
     end
   end
 end
