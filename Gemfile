@@ -1,7 +1,4 @@
 source 'https://rubygems.org'
 gem 'mechanize'
-gem 'highline'
-gem 'bcrypt'
 gem 'daybreak'
 gem 'colorize'
-gem 'mechanize-downloader'
