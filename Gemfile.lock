@@ -5,6 +5,7 @@ GEM
     daybreak (0.3.0)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
+    highline (1.7.1)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     mechanize (2.7.3)
@@ -38,4 +39,5 @@ PLATFORMS
 DEPENDENCIES
   colorize
   daybreak
+  highline
   mechanize
