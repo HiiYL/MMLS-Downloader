@@ -16,5 +16,6 @@ Simple tool to download and update your mmls lecture notes, tutorials and assign
       - Anyway you which, but i recommend RVM https://rvm.io/rvm/install
   2. run ` bundle install `
   3. run ` ruby mmls_downloader.rb `
+  
 [<img src="https://cloud.githubusercontent.com/assets/7908951/10385129/646fac8a-6e77-11e5-80cc-cd52798853d3.png" width=355 height=240>](Example)
 [<img src="https://cloud.githubusercontent.com/assets/7908951/10385130/6470c084-6e77-11e5-8a87-92d3737f3c52.png" width=323 height=240>](Example)
