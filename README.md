@@ -6,6 +6,21 @@ Simple tool to download and update your mmls lecture notes, tutorials and assign
 
 
 ### To Run
+#### Gem Version ( Mac OS X and Linux only )
+1. Have Ruby installed
+2. run ` gem install mmls-downloader ` in your terminal
+3. Once installed, run ` mmls update ` , first run will ask for your login credentials and download path
+4. to refresh your files with the latest on mmls, just run ` mmls update ` again
+5. run ` mmls set_path [ path ] ` to change download path
+  - some defaults have been provided for Mac OS X
+    - documents
+    - icloud
+    - downloads
+    
+    e.g ` mmls set_path documents `
+    
+
+#### Script Version
 - Binary Release(Windows only)
   - Windows users, just download the attached binary under releases.
 - Compile From Source
