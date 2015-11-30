@@ -2,8 +2,6 @@ require 'mechanize'
 require "highline/import"
 require 'daybreak'
 require 'colorize'
-
-
 class MMLS
 
   def initialize
@@ -61,7 +59,8 @@ class MMLS
         if page.parser.xpath('//*[@id="alert"]').empty?
           @db.set! 'student_id', student_id
           @db.set! 'mmls_password', mmls_password
-          set_path
+          path = ask("Enter download path :")
+          set_path(path)
           break
         end
         retry_reply = ask("Student ID or password is invalid... Would you like to retry? (Y/N)")
