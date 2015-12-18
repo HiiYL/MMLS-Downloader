@@ -3,7 +3,7 @@
 require 'mmls-downloader'
 case ARGV[0].downcase
   when "set_path"
-    puts MMLS.set_path(ARGV[1])
+    MMLS.set_path(ARGV[1])
   when "update"
-    puts MMLS.update
+    MMLS.update
 end
