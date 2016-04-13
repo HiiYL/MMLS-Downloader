@@ -89,11 +89,15 @@ class MMLS
         directory = link.text.split(" (").first + "/"
         full_directory = @db['save_path'] + "/" + link.text.split(" (").first + "/"
         file_name = dl_form.file_name
-        if Dir[full_directory + file_name].empty?
-          agent.submit(dl_form).save(full_directory + file_name)
-          puts "create ".green  + directory + file_name
-        # else
-        #   puts "identical ".blue + file_name
+        begin
+          if Dir[directory + file_name].empty?
+            agent.submit(dl_form).save(directory + file_name)
+            puts "create ".green  + directory + file_name
+          # else
+          #   puts "identical ".blue + file_name
+          end
+        rescue
+          puts "Cannot download " + directory + file_name + ". Link may be broken"
         end
       end
     end
