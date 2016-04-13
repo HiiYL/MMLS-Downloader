@@ -54,11 +54,15 @@ subject_links.each do |link|
   page.forms_with(:action => 'https://mmls.mmu.edu.my/form-download-content').each do |dl_form|
     directory = link.text.split(" (").first + "/"
     file_name = dl_form.file_name
-    if Dir[directory + file_name].empty?
-      agent.submit(dl_form).save(directory + file_name)
-      puts "create ".green  + directory + file_name
-    # else
-    #   puts "identical ".blue + file_name
+    begin
+      if Dir[directory + file_name].empty?
+        agent.submit(dl_form).save(directory + file_name)
+        puts "create ".green  + directory + file_name
+      # else
+      #   puts "identical ".blue + file_name
+      end
+    rescue
+      puts "Cannot download " + directory + file_name + ". Link may be broken"
     end
   end
 end
