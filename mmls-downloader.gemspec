@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'mmls-downloader'
-  s.version     = '1.0.6'
+  s.version     = '1.0.7'
   s.date        = '2016-12-20'
   s.summary     = "MMLS Downloader"
   s.description = "A simple gem to download notes"
