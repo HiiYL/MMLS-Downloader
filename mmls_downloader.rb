@@ -47,7 +47,7 @@ end
 db.close
 agent.pluggable_parser.default = Mechanize::Download
 agent.agent.http.retry_change_requests = true
-subject_links = page.links_with(:text => /[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9] . [A-Z][A-Z][A-Z]/)
+subject_links = page.links_with(text: /[A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9] . [A-Z0-9 ][A-Z0-9 ][A-Z0-9 ]/)
 subject_links.each do |link|
   page = agent.get(link.uri)
   puts "\n Current Subject: "  + link.text
