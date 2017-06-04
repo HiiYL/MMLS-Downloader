@@ -1,7 +1,7 @@
 # MMLS-Downloader
 Simple tool to download and update your mmls lecture notes, tutorials and assignments.
 
-###Features
+### Features
 - Organizes lecture notes, tutorials, and assignments into relevant folders
 
 
